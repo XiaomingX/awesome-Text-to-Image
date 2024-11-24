@@ -1,13 +1,6 @@
 # 精选：文本到图像资源集合
 
-
 本项目集合了与文本到图像生成和编辑相关的资源。
-
-## 🔔 新闻
-* [24/02/29] 发布 **"Awesome Text to Image" 版本 2.0**！包括最新论文与相关工作更新。
-* [23/05/26] 添加了我们的综述论文 “[**Vision + Language Applications: A Survey**](https://openaccess.thecvf.com/content/CVPR2023W/GCV/html/Zhou_Vision__Language_Applications_A_Survey_CVPRW_2023_paper.html)”。
-* [20/10/13] 项目 **Awesome-Text-to-Image** 创建。
-
 
 ## 描述
 最近几年，计算机视觉（CV）和自然语言处理（NLP）领域在深度学习方面取得了许多突破性进展，研究者们逐渐将语义信息与视觉信息相结合，进行文本到图像的合成研究，将输入的文本描述（关键词或句子）转化为真实图像。
@@ -17,8 +10,6 @@
 * (CVPR 2024) **CosmicMan: 用于人物的文本到图像基础模型**，作者：Shikai Li等。[[论文](https://arxiv.org/abs/2404.01294)] [[项目](https://cosmicman-cvpr2024.github.io/)]
 * (ICML 2024) **快速文本到3D面部生成及操控，通过跨模态映射和几何正则化**，作者：Jinlu Zhang等。[[论文](https://arxiv.org/abs/2403.06702)] [[代码](https://github.com/Aria-Zhangjl/E3-FaceNet)]
 * (NeurIPS 2023) **在扩散模型中插入任何人**，作者：Ge Yuan等。[[论文](https://arxiv.org/abs/2306.00926)] [[项目](https://celeb-basis.github.io/)]
-
-[<u><🎯回到顶部></u>](#head-content)
 
 **2024**
 - **Flow Generator Matching**，Zemin Huang等。[[论文](https://arxiv.org/abs/2410.19310)]
@@ -34,7 +25,7 @@
 - **Visual ChatGPT: 视觉基础模型对话、绘图与编辑** (⭐⭐)，Chenfei Wu等。[[论文](https://arxiv.org/abs/2303.04671)] [[代码](https://github.com/microsoft/visual-chatgpt)]
 - **AltCLIP: 扩展语言功能的文本到图像生成** (⭐⭐)，Zhongzhi Chen等。[[论文](https://arxiv.org/abs/2211.06679)] [[代码](https://github.com/FlagAI-Open/FlagAI/tree/master/examples/AltDiffusion-m18)]
 
-[<u><🎯回到顶部></u>](#head-content)
+
 
 ## 6. 相关研究
 
