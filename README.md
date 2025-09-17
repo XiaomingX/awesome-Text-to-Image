@@ -1,128 +1,90 @@
-# 精选：文本到图像资源集合
-
-本项目集合了与文本到图像生成和编辑相关的资源。
-
-## 描述
-最近几年，计算机视觉（CV）和自然语言处理（NLP）领域在深度学习方面取得了许多突破性进展，研究者们逐渐将语义信息与视觉信息相结合，进行文本到图像的合成研究，将输入的文本描述（关键词或句子）转化为真实图像。
-
-### 文本到面部图像
-* (ECCV 2024) **PreciseControl: 提升文本到图像扩散模型的细粒度属性控制**，作者：Rishubh Parihar等。[[论文](https://www.arxiv.org/abs/2408.05083)] [[项目](https://rishubhpar.github.io/PreciseControl.home/)]
-* (CVPR 2024) **CosmicMan: 用于人物的文本到图像基础模型**，作者：Shikai Li等。[[论文](https://arxiv.org/abs/2404.01294)] [[项目](https://cosmicman-cvpr2024.github.io/)]
-* (ICML 2024) **快速文本到3D面部生成及操控，通过跨模态映射和几何正则化**，作者：Jinlu Zhang等。[[论文](https://arxiv.org/abs/2403.06702)] [[代码](https://github.com/Aria-Zhangjl/E3-FaceNet)]
-* (NeurIPS 2023) **在扩散模型中插入任何人**，作者：Ge Yuan等。[[论文](https://arxiv.org/abs/2306.00926)] [[项目](https://celeb-basis.github.io/)]
-
-**2024**
-- **Flow Generator Matching**，Zemin Huang等。[[论文](https://arxiv.org/abs/2410.19310)]
-- **Kandinsky 3: 多功能生成框架的文本到图像合成**，Vladimir Arkhipkin等。[[论文](https://arxiv.org/abs/2410.21061)] [[代码](https://github.com/ai-forever/Kandinsky-3)] [[项目](https://ai-forever.github.io/Kandinsky-3/)]
-- **Imagen 3** (⭐⭐)，ImagenTeam-Google [[论文](https://arxiv.org/abs/2408.07009)]
-- **Ranni: 精准指令跟随的文本到图像扩散模型**，Yutong Feng等。[[论文](https://arxiv.org/abs/2311.17002)] [[项目](https://ranni-t2i.github.io/Ranni/)] [[代码](https://github.com/ali-vilab/Ranni)]
-- **SDXL-Lightning: 渐进对抗扩散蒸馏** (⭐)，Shanchuan Lin等。[[论文](https://arxiv.org/abs/2402.13929)] [[HuggingFace](https://huggingface.co/ByteDance/SDXL-Lightning)] [[演示](https://fastsdxl.ai/)]
-
-**2023**
-- **CoDi-2: 任意生成的上下文交互模型**，Zineng Tang等。[[论文](https://arxiv.org/abs/2311.18775)] [[项目](https://codi-2.github.io/)] [[代码](https://github.com/microsoft/i-Code/tree/main/CoDi-2)]
-- **Kandinsky: 改进的文本到图像合成** (⭐)，Anton Razzhigaev等。[[论文](https://arxiv.org/abs/2310.03502)] [[代码](https://github.com/ai-forever/Kandinsky-2)] [[演示](https://fusionbrain.ai/en/editor/)]
-- **Pick-a-Pic: 用户偏好开放数据集** (⭐⭐)，Yuval Kirstain等。[[论文](https://arxiv.org/abs/2305.01569)] [[代码](https://github.com/yuvalkirstain/PickScore)] [[数据集](https://huggingface.co/datasets/yuvalkirstain/pickapic_v1)] [[应用](https://pickapic.io/)]
-- **Visual ChatGPT: 视觉基础模型对话、绘图与编辑** (⭐⭐)，Chenfei Wu等。[[论文](https://arxiv.org/abs/2303.04671)] [[代码](https://github.com/microsoft/visual-chatgpt)]
-- **AltCLIP: 扩展语言功能的文本到图像生成** (⭐⭐)，Zhongzhi Chen等。[[论文](https://arxiv.org/abs/2211.06679)] [[代码](https://github.com/FlagAI-Open/FlagAI/tree/master/examples/AltDiffusion-m18)]
+# 文本到图像（T2I）生成与编辑：2024精选资源手册
+本手册整理了**文本到图像（Text-to-Image, T2I）生成与编辑领域的核心资源**，聚焦2023-2024年前沿进展，剔除过时内容，补充模型核心价值与实用解读，帮你快速理解领域重点。
 
 
+## 一、什么是文本到图像生成？
+文本到图像生成是**计算机视觉（CV）与自然语言处理（NLP）交叉的核心技术**：通过深度学习模型（目前主流是“扩散模型”，可理解为“逐步去噪生成清晰图像”的技术），将文字描述（关键词、句子甚至段落）转化为符合语义的真实或创意图像。
 
-## 6. 相关研究
-
-### 📝提示工程
-- **PromptCharm: 多模态提示优化的文本到图像生成** (CHI 2024) [[论文](https://arxiv.org/abs/2403.04014)]
-- **自动化黑盒提示工程用于个性化文本到图像生成** (arXiv 2024) [[论文](https://arxiv.org/abs/2403.191039)]
-- **自动提示工程用于文本到图像合成** (EMNLP 2023) [[论文](https://arxiv.org/abs/2311.06752)]
-- **NeuroPrompts: 提示优化的自适应框架** (arXiv 2023) [[论文](https://arxiv.org/abs/2311.12229)] [[视频](https://www.youtube.com/watch?v=Cmca_RWYn2g)]
-  
-### ⭐多模态生成
-- **4M-21: 任意到任意的视觉模型** (arXiv 2024) [[论文](https://arxiv.org/abs/2406.09406)] [[项目](https://4m.epfl.ch/)]
-  - 支持文本到图像、深度图、语义分割等多任务
-- **Ctrl-X: 结构和外观控制的文本到图像生成** (arXiv 2024) [[论文](https://arxiv.org/abs/2406.07540)] [[项目](https://genforce.github.io/ctrl-x/)]
-- **CoDi: 通过可组合扩散实现任意到任意生成** (NeurIPS 2023) [[论文](https://arxiv.org/abs/2305.11846)] [[项目](https://codi-gen.github.io/)]
-  - 支持文本、图像、音频之间的互相转换与组合生成
-- **ImageBind: 跨六种模态的嵌入空间** (CVPR 2023) [[论文](https://arxiv.org/abs/2305.05665)] [[项目](https://ai.facebook.com/blog/imagebind-six-modalities-binding-ai/)]
+近年该领域爆发式发展，核心价值在于**降低视觉创作门槛**——无需专业绘画技能，仅用文字即可生成设计稿、艺术创作、场景示意图等内容。
 
 
-### 主要应用领域
+## 二、2023-2024核心生成模型（附实用解读）
+以下模型按“通用基础模型”“专项任务模型”分类，优先收录2024年重磅成果，标注核心优势与可用资源（论文/代码/演示）。
 
-- **多概念组合**: [Gen4Gen: 生成数据管道用于多概念组合生成](https://arxiv.org/abs/2402.15504)，Chun-Hsiao Yeh 等。
-- **3D 发型生成**: [HAAR: 基于文本的 3D 发型生成模型](https://arxiv.org/abs/2312.11666)，Vanessa Sklyarova 等。
-- **图像超分辨率**: [基于文本提示的超分辨率](https://arxiv.org/abs/2311.14282)，Zheng Chen 等。
-- **图像编辑**: [生成填充](https://www.adobe.com/products/photoshop/generative-fill.html)。
-- **大语言模型 (LLM)**: [LaDi: 利用 LLMs 改善文本生成](https://arxiv.org/abs/2311.03716v1)，Allen Roush 等。
-- **分割模型**: [SegGen: 通过文本与图像生成增强分割](https://arxiv.org/abs/2311.03355)，Hanrong Ye 等。
-- **文本编辑**: [DiffUTE: 通用文本编辑扩散模型](https://arxiv.org/abs/2305.10825)，Haoxing Chen 等。
-- **文本角色生成**: [TextDiffuser: 文本绘制扩散模型](https://arxiv.org/abs/2305.10855)，Jingye Chen 等。
-- **开放词汇全景分割**: [基于文本生成模型的全景分割](https://arxiv.org/abs/2303.04803)，Jiarui Xu 等。
-- **中文字符生成**: [GlyphDraw: 学习绘制中文字符](https://arxiv.org/abs/2303.17870)，Jian Ma 等。
+### 1. 通用基础模型（全能型，覆盖各类场景）
+| 模型名称               | 发布信息（会议/机构） | 核心优势（通俗解读）                                                                 | 资源链接                                                                 |
+|------------------------|----------------------|--------------------------------------------------------------------------------------|--------------------------------------------------------------------------|
+| **Imagen 3**           | 2024, Google         | 谷歌旗舰模型，**画质精细度、语义与图像匹配度顶尖**，支持多轮编辑和高分辨率输出。     | [论文](https://arxiv.org/abs/2408.07009)、[官方主页](https://imagen.research.google/) |
+| **Kandinsky 3**        | 2024, AI Forever     | 开源全能框架，**支持多模态输入（文本+图像）**，生成风格多样，对中文提示兼容性较好。  | [论文](https://arxiv.org/abs/2410.21061)、[代码](https://github.com/ai-forever/Kandinsky-3)、[演示](https://ai-forever.github.io/Kandinsky-3/) |
+| **SDXL-Lightning**     | 2024, ByteDance      | Stable Diffusion（SD）系列提速版，**1-4步即可生成高清图**（传统模型需50+步），效率极高。 | [论文](https://arxiv.org/abs/2402.13929)、[HuggingFace](https://huggingface.co/ByteDance/SDXL-Lightning)、[演示](https://fastsdxl.ai/) |
+| **Ranni**              | 2024, Ali-ViLab      | **精准跟随复杂指令**（比如“穿红色大衣、戴黑色围巾的猫坐在木质书架上”），细节还原强。 | [论文](https://arxiv.org/abs/2311.17002)、[代码](https://github.com/ali-vilab/Ranni) |
+| **Kandinsky 2**        | 2023, AI Forever     | 经典开源模型，虽为2023年作品，但**社区支持完善**，适合入门学习和二次开发。           | [论文](https://arxiv.org/abs/2310.03502)、[代码](https://github.com/ai-forever/Kandinsky-2) |
 
-### 文本+图像/视频 → 图像/视频
 
-- **风格迁移**: [StyleShot: 快速风格捕捉](https://arxiv.org/abs/2407.01414)，Junyao Gao 等。
-- **复杂图像编辑**: [SmartEdit: 基于多模态大语言模型的复杂图像编辑](https://arxiv.org/abs/2312.06739)，Yuzhou Huang 等。
-- **高保真图像个性化**: [MM-Diff](https://arxiv.org/abs/2403.15059)，Zhichao Wei 等。
-- **文本驱动的三维对象插入**: [InseRF](https://arxiv.org/abs/2401.05335)，Mohamad Shahbazi 等。
+### 2. 专项任务模型（聚焦细分场景）
+#### （1）面部/人像生成
+- **PreciseControl**（ECCV 2024, Rishubh Parihar等）：解决“面部细节难控制”问题，比如精准调整“眉毛形状、瞳孔颜色”等细粒度属性，对人像创作极其实用。[论文](https://www.arxiv.org/abs/2408.05083)、[项目](https://rishubhpar.github.io/PreciseControl.home/)
+- **CosmicMan**（CVPR 2024, Shikai Li等）：专注人物生成的基础模型，支持不同姿态、服饰、背景的人像合成，生成人物比例更自然。[论文](https://arxiv.org/abs/2404.01294)、[项目](https://cosmicman-cvpr2024.github.io/)
+- **插入任何人**（NeurIPS 2023, Ge Yuan等）：输入一张人脸照片，即可让模型“记住”该人脸，后续生成包含此人物的各类场景图像（如“张三在月球上散步”）。[论文](https://arxiv.org/abs/2306.00926)、[项目](https://celeb-basis.github.io/)
 
-### 文本+布局 → 图像
+#### （2）3D/动态生成延伸
+- **快速文本到3D面部生成**（ICML 2024, Jinlu Zhang等）：从文字直接生成可编辑的3D人脸模型，支持旋转、表情调整，适用于游戏、元宇宙场景。[论文](https://arxiv.org/abs/2403.06702)、[代码](https://github.com/Aria-Zhangjl/E3-FaceNet)
+- **PlacidDreamer**（ACMMM 2024, Shuo Huang等）：开源文本到3D模型，生成速度比同类模型快30%，且物体纹理更清晰（如“一个带花纹的陶瓷花瓶”）。[论文](https://arxiv.org/abs/2407.13976)、[代码](https://github.com/HansenHuang0823/PlacidDreamer)
+- **Sora**（2024, OpenAI）：文本到视频旗舰模型（延伸方向），可生成1分钟以上高清视频，支持复杂场景和运动逻辑（如“一个人在雪山滑雪，镜头跟随旋转”）。[主页](https://openai.com/sora)、[技术报告](https://openai.com/research/video-generation-models-as-world-simulators)
 
-- **零样本布局控制**: [Zero-Painter: 文本到图像的布局控制](https://arxiv.org/abs/2406.04032)，Marianna Ohanyan 等。
-- **多实例生成控制器**: [MIGC](https://arxiv.org/abs/2402.05408)，Dewei Zhou 等。
-- **生成对抗监督**: [Adversarial Supervision Makes Layout-to-Image Diffusion Models Thrive](https://arxiv.org/abs/2401.08815)，Yumeng Li 等。
 
-### 其他
+## 三、关键技术方向（怎么让生成更“好用”？）
+T2I的核心挑战是“可控性、效率、多样性”，以下是2024年重点突破的技术方向：
 
-- **视频编辑**: [MagicStick: 基于控制手柄变换的视频编辑](https://arxiv.org/abs/2312.03047v1)，Yue Ma 等。
-- **图像合成和编辑**: [MasaCtrl: 一致性图像合成和编辑](https://arxiv.org/abs/2304.08465)，Mingdeng Cao 等。
+### 1. 提示工程（写好文字=生成好图）
+“提示词（Prompt）”是文字到图像的“翻译指令”，提示工程专注于“如何写提示词、或让模型自动优化提示词”：
+- **PromptCharm**（CHI 2024）：自动优化粗糙提示词，比如把“一只猫”优化为“一只橘色短毛猫，趴在阳光照射的窗台，背景有绿萝，写实风格”，生成效果大幅提升。[论文](https://arxiv.org/abs/2403.04014)
+- **自动化黑盒提示工程**（arXiv 2024）：针对“闭源模型（如Midjourney）”，自动测试不同提示词组合，找到最符合用户需求的版本（无需懂模型原理）。[论文](https://arxiv.org/abs/2403.191039)
 
-**文本+图像/视频 → 图像/视频**
-- (arXiv 2024) **ECNet: 高效可控文本生成图像扩散模型**，Sicheng Li 等。[[论文](https://arxiv.org/abs/2403.18417)]
-- (ICCV 2023) **HumanSD: 基于骨架的人像生成扩散模型**，Xuan Ju 等。[[论文](https://arxiv.org/abs/2304.04269)] [[项目](https://idea-research.github.io/HumanSD/)] [[代码](https://github.com/IDEA-Research/HumanSD)] [[视频](https://drive.google.com/file/d/1Djc2uJS5fmKnKeBnL34FnAAm3YSH20Bb/view)]
-- (arXiv 2023) **机器人共感: 声音与情感引导的AI绘画**，Vihaan Misra 等。[[论文](https://arxiv.org/abs/2302.04850)]
 
-**布局/遮罩 → 图像**
-- (CVPR 2024) **InstanceDiffusion: 实例级别图像生成控制**，XuDong Wang 等。[[论文](https://arxiv.org/abs/2402.03290)] [[项目](https://people.eecs.berkeley.edu/~xdwang/projects/InstDiff/)] [[代码](https://github.com/frank-xwang/InstanceDiffusion)]
-- (CVPR 2023) **自由布局到图像合成**，Han Xue 等。[[论文](https://arxiv.org/abs/2303.14412)] [[代码](https://github.com/essunny310/FreestyleNet)]
-- (CVPR 2023) **LayoutDiffusion: 可控扩散模型生成布局到图像**，Guangcong Zheng 等。[[论文](https://arxiv.org/abs/2303.17189)] [[代码](https://github.com/ZGCTroy/LayoutDiffusion)]
+### 2. 多模态控制（不止文字，还能加“约束”）
+单一文字描述容易“失控”（比如想让“苹果在盘子左边”，结果生成在右边），多模态控制通过“文字+其他信号”精准约束生成：
+- **布局控制**：输入“文字+布局图”（比如用方框标“盘子在中间，苹果在左上方”），模型严格按布局生成。代表：Zero-Painter（2024）、InstanceDiffusion（CVPR 2024，支持多物体分别控制）。
+- **图像/视频约束**：输入“文字+参考图”，生成“符合文字描述、且保留参考图风格/结构”的图像。代表：MM-Diff（2024，高保真个性化）、ControlVideo（ICLR 2024，文本+参考图生成视频）。
+- **跨模态生成**：支持“文本↔图像↔音频”互相转换，比如用文字生成图像后，再生成匹配的背景音。代表：4M-21（2024，支持6种模态）、CoDi（NeurIPS 2023）。
 
-**语音 → 图像**
-- (IEEE/ACM TASLP 2021) **从语音描述生成图像**，Xinsheng Wang 等。[[论文](https://dl.acm.org/doi/10.1109/TASLP.2021.3053391)] [[代码](https://github.com/xinshengwang/S2IGAN)] [[项目](https://xinshengwang.github.io/project/s2igan/)]
-- (IEEE JSTSP 2020) **直接语音到图像转换**，Jiguo Li 等。[[论文](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9067083)] [[代码](https://github.com/smallflyingpig/speech-to-image-translation-without-text)] [[项目](https://smallflyingpig.github.io/speech-to-image/main)]
 
-**场景图 → 图像**
-- (arXiv 2023) **基于扩散的场景图生成图像**，Ling Yang 等。[[论文](https://arxiv.org/abs/2211.11138)]
-- (CVPR 2018) **场景图到图像生成**，Justin Johnson 等。[[论文](https://openaccess.thecvf.com/content_cvpr_2018/CameraReady/0764.pdf)] [[代码](https://github.com/google/sg2im)]
+### 3. 效率与可控性优化
+- **快速生成**：核心是“减少扩散模型的去噪步数”，代表是SDXL-Lightning（1-4步出图），满足实时创作需求。
+- **细粒度控制**：针对“局部属性修改”，比如只换衣服颜色、不换人物姿态。代表：PreciseControl（面部属性）、Ctrl-X（2024，结构+外观分离控制）。
 
-**文本 → 3D/动画/形状/网格等**
-- (arXiv 2024) **CrowdMoGen: 零样本文本驱动集体动作生成**，Xinying Guo 等。[[论文](https://arxiv.org/abs/2407.06188)] [[项目](https://gxyes.github.io/projects/CrowdMoGen.html)]
-- (ACMMM 2024) **PlacidDreamer: 文本生成3D**，Shuo Huang 等。[[论文](https://arxiv.org/abs/2407.13976)] [[代码](https://github.com/HansenHuang0823/PlacidDreamer)]
-- (arXiv 2023) **4D-fy: 文本生成4D**，Sherwin Bahmani 等。[[论文](https://arxiv.org/abs/2311.17984)] [[项目](https://sherwinbahmani.github.io/4dfy/)] [[代码](https://github.com/sherwinbahmani/4dfy)]
 
-**文本 → 视频生成相关工作**：
+## 四、主流应用领域（能用来做什么？）
+### 1. 内容创作与设计
+- 平面设计：生成海报、LOGO草图（配合提示工程优化细节）；
+- 艺术创作：生成油画、插画等风格化作品（如用Kandinsky 3指定“梵高风格的城市夜景”）；
+- 角色/场景设计：游戏、动画的角色原型（如CosmicMan生成不同服饰的角色）、场景概念图。
 
-1. **VideoTetris: 组合文本到视频生成**（arXiv 2024）  
-   [论文](https://arxiv.org/abs/2406.04277) | [项目](https://videotetris.github.io/) | [代码](https://github.com/YangLing0818/VideoTetris)
 
-2. **MovieDreamer: 分层生成长时间视觉序列**（arXiv 2024）  
-   [论文](https://arxiv.org/abs/2407.16655) | [项目](https://aim-uofa.github.io/MovieDreamer/) | [代码](https://github.com/aim-uofa/MovieDreamer) | [演示视频](https://www.youtube.com/watch?v=aubRVOGrKLU)
+### 2. 图像编辑与优化
+- 生成填充：删除图像中多余物体（如“去掉照片里的垃圾桶”）、或补充缺失部分（如“给人物加上背景花海”），代表：Adobe Photoshop生成填充功能。
+- 风格迁移：把一张图的风格迁移到另一张，比如“把我的自拍变成水墨画风”，代表：StyleShot（2024，快速捕捉参考图风格）。
+- 超分辨率：用文字提示“把模糊的老照片变清晰，保留面部皱纹细节”，代表：文本提示超分辨率模型（2023）。
 
-3. **Sora**（OpenAI 2024）  
-   [主页](https://openai.com/sora) | [技术报告](https://openai.com/research/video-generation-models-as-world-simulators) | [带音频版本](https://x.com/elevenlabsio/status/1759240084342059260?s=20)
 
-4. **ControlVideo: 无需训练的可控文本到视频生成**（ICLR 2024）  
-   [论文](https://arxiv.org/abs/2305.13077) | [代码](https://github.com/YBYBZhang/ControlVideo)
+### 3. 垂直领域落地
+- 3D行业：生成3D模型草图（如PlacidDreamer生成家具3D模型）；
+- 文字相关：生成艺术化中文字符（GlyphDraw，2023）、文本角色插画（TextDiffuser，2023）；
+- 影视/视频：生成长视频片段（Sora）、视频局部编辑（MagicStick，2023，用手柄控制视频中物体运动）。
 
-5. **MagicVideo-V2: 多阶段高美感视频生成**（arXiv 2024）  
-   [论文](https://arxiv.org/abs/2401.04468) | [项目](https://magicvideov2.github.io/)
 
-6. **LAVIE: 高质量视频生成（级联潜在扩散模型）**（arXiv 2023）  
-   [论文](https://arxiv.org/abs/2309.15103) | [项目](https://vchitect.github.io/LaVie-project/) | [代码](https://github.com/Vchitect/LaVie)
+## 五、实用工具与数据集（上手必备）
+### 1. 开发工具
+- **Hugging Face Diffusers**：最流行的T2I开发库，支持SD、Kandinsky等主流模型，提供开箱即用的生成/编辑API，适合Python开发者。[官网](https://huggingface.co/docs/diffusers/index)
+- **ControlNet**：SD的控制插件，支持“线稿→图像”“深度图→图像”等，是可控生成的必备工具。[代码](https://github.com/lllyasviel/ControlNet)
 
-7. **Emu Video: 显式图像条件化文本到视频生成**（arXiv 2023）  
-   [论文](https://arxiv.org/abs/2311.10709) | [项目](https://emu-video.metademolab.com/)
 
-8. **Text2Video-Zero: 文本到图像扩散模型用于零样本视频生成**（ICCV 2023）  
-   [论文](https://arxiv.org/abs/2303.13439) | [项目](https://text2video-zero.github.io/) | [视频](https://www.dropbox.com/s/uv90mi2z598olsq/Text2Video-Zero.MP4?dl=0) | [代码](https://github.com/Picsart-AI-Research/Text2Video-Zero)
+### 2. 数据集
+- **Pick-a-Pic**（2023）：全球最大的“用户偏好数据集”，包含百万级“文本+多张图像+用户选择结果”，可用来训练“更懂人类审美的模型”。[数据集](https://huggingface.co/datasets/yuvalkirstain/pickapic_v1)、[代码](https://github.com/yuvalkirstain/PickScore)
 
-9. **FETV: 开放领域文本到视频生成的细粒度评估基准**（NeurIPS 2023）  
-   [论文](https://arxiv.org/abs/2311.01813v1) | [项目](https://github.com/llyx97/FETV)
+
+## 六、2024领域趋势总结
+1.  **可控性为王**：从“生成图像”到“精准生成想要的图像”，细粒度属性控制（如面部、服饰）、多模态约束（如布局、参考图）成为核心方向；
+2.  **多模态融合**：不再局限于“文本→图像”，而是“文本+图像+音频+3D”的跨模态生成与编辑（如Sora的文本→视频+音频）；
+3.  **效率革命**：快速生成（如SDXL-Lightning）、轻量化模型（适配手机等端侧设备）成为落地关键；
+4.  **开源与闭源并存**：闭源模型（Imagen 3、Sora）引领技术上限，开源模型（Kandinsky、SD系列）支撑社区创新与二次开发。
